@@ -1,0 +1,30 @@
+
+> nodedropp-website@0.1.0 build /home/ubuntu_wsl/repos/nodedropp-website
+> next build
+
+   ▲ Next.js 15.3.1
+   - Environments: .env.local, .env
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 10.0s
+   Linting and checking validity of types ...
+
+Failed to compile.
+
+./src/app/page.tsx
+6:5  Warning: Unused eslint-disable directive (no problems were reported from '@typescript-eslint/no-unsafe-assignment').
+
+./src/components/views/IconCard.tsx
+4:6  Warning: 'IconCardProps' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/components/views/ImageCard.tsx
+7:6  Warning: 'ImageCardProps' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/components/views/SplitImage.tsx
+15:55  Error: Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator.  @typescript-eslint/prefer-nullish-coalescing
+
+./src/sanity/env.ts
+2:48  Error: Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator.  @typescript-eslint/prefer-nullish-coalescing
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+ ELIFECYCLE  Command failed with exit code 1.
