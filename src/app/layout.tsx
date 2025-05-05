@@ -1,7 +1,10 @@
-import "~/styles/globals.css";
+import "~/css/globals.css";
 
 import { type Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Urbanist, Montserrat } from "next/font/google";
+import { Header } from "~/components/views/Header";
+import { Footer } from "~/components/views/Footer";
+import { ContactForm } from "~/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -9,17 +12,31 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-const geist = Geist({
+const fontSans = Urbanist({
   subsets: ["latin"],
-  variable: "--font-geist-sans",
+  variable: "--font-body-sans",
 });
+
+const fontAlt = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-body-alt",
+});
+
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${geist.variable}`}>
-      <body>{children}</body>
+    <html lang="en" className={`${fontSans.variable} ${fontAlt.variable}`}>
+      <body className="bg-background text-on-background">
+        <div className="body-wrapper relative w-full min-h-screen">
+          <div className="body-inner w-full h-full full content">
+            <Header />
+            {children}
+            <Footer />
+          </div>
+        </div>
+      </body>
     </html>
   );
 }

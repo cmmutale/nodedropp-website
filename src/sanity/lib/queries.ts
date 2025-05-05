@@ -38,3 +38,16 @@ export const HOME_PAGE_QUERY = defineQuery(
 
   `
 )
+
+export const PROJECT_QUERY = defineQuery(
+  `
+ *[_type == "projectType"]{
+  _id,
+  projectTitle,
+  "slug": slug.current,
+  projectDisplayImage,
+  projectImageGallery
+}
+`
+)
+
